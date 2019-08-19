@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import gql from "graphql-tag";
-import { useLazyQuery, useQuery } from "@apollo/react-hooks";
+import { useLazyQuery } from "@apollo/react-hooks";
 import { Grid, Box } from "@material-ui/core";
 
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
@@ -26,10 +26,8 @@ const GET_LISTINGS = gql`
 `;
 const Home = () => {
   const [listings, setListings] = useState([]);
-  const [getData, { loading, data }] = useLazyQuery(GET_LISTINGS, {
+  const [getData, { loading }] = useLazyQuery(GET_LISTINGS, {
     onCompleted: data => {
-      console.log(data);
-
       return setListings(data.businesses);
     }
   });

@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/styles";
-import JumboImage from "../../assets/jumbo-image.jpg";
 import { grey } from "@material-ui/core/colors";
 
 export default makeStyles({

@@ -9,6 +9,12 @@ import Home from "./pages/Home/Home";
 const LazyBusinessPage = loadable(() => import("./pages/Business/Business"), {
   fallback: <div>Loading...</div>
 });
+const LazyLoginPage = loadable(() => import("./pages/Login/Login"), {
+  fallback: <div>Loading...</div>
+});
+const LazyAdminPage = loadable(() => import("./pages/Admin/Admin"), {
+  fallback: <div>Loading...</div>
+});
 const uri =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000/graphql"
@@ -23,6 +29,8 @@ function App() {
       <Router>
         <Route path="/" exact component={Home} />
         <Route path="/business/:id" component={LazyBusinessPage} />
+        <Route path="/admin/login" component={LazyLoginPage} />
+        <Route path="/admin" component={LazyAdminPage} />
       </Router>
     </ApolloProvider>
   );

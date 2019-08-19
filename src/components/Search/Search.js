@@ -5,7 +5,6 @@ import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
-import { FormControl } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,7 +41,7 @@ export default function Search({ handleSearch }) {
     handleSearch(value);
   };
   const handleEnterKey = event => {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       handleSearch(value);
     }
   };

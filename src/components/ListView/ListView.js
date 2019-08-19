@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Typography, Paper } from "@material-ui/core";
+import { Grid, Box, Typography } from "@material-ui/core";
 
 import businessDummyLogo from "../../assets/business-logo-dummy.png";
 import PhotoList from "../PhotoList/PhotoList";
