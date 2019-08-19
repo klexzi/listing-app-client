@@ -9,9 +9,12 @@ import Home from "./pages/Home/Home";
 const LazyBusinessPage = loadable(() => import("./pages/Business/Business"), {
   fallback: <div>Loading...</div>
 });
-
+const uri =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:8000/graphql"
+    : "https://init-listing-api.herokuapp.com/graphql";
 const client = new ApolloClient({
-  uri: "http://localhost:8000/graphql"
+  uri
 });
 
 function App() {
